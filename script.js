@@ -44,7 +44,6 @@ const questions = [
     } else {
       alert('Wrong!');
     }
-
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
       loadQuestion();
@@ -54,8 +53,7 @@ const questions = [
   }
 
   function showScore() {
-    questionEl.style.display = 'none';
-    optionsEl.style.display = 'none';
+    document.getElementById('quiz').style.display = 'none';
     scoreEl.textContent = `You scored ${score} out of ${questions.length}!`;
     restartBtn.style.display = 'block';
   }
@@ -63,11 +61,15 @@ const questions = [
   function restartQuiz() {
     currentQuestionIndex = 0;
     score = 0;
-    questionEl.style.display = 'block';
-    optionsEl.style.display = 'block';
     scoreEl.textContent = '';
     restartBtn.style.display = 'none';
+    document.getElementById('quiz').style.display = 'block';
     loadQuestion();
   }
 
-  loadQuestion();
+  function startQuiz() {
+    // Hide the start button and show the quiz section
+    document.getElementById('start').style.display = 'none';
+    document.getElementById('quiz').style.display = 'block';
+    loadQuestion();
+  }

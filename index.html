@@ -11,13 +11,17 @@
 
     <div class="quiz-container">
         <h1>Quiz Game</h1>
-        <div id="quiz">
+        <!-- Start Button -->
+        <button class="start-btn" id="start" onclick="startQuiz()">Start Quiz</button>
+    
+        <!-- Quiz Section -->
+        <div id="quiz" style="display: none;">
           <div class="question" id="question"></div>
           <ul class="options" id="options"></ul>
         </div>
         <div class="score" id="score"></div>
         <button class="restart-btn" id="restart" onclick="restartQuiz()">Restart</button>
-      </div>
+    </div>
 
       <script src="script.js"></script>
     
