@@ -18,32 +18,54 @@ const questions = [
 
   let currentQuestionIndex = 0;
   let score = 0;
+  let selectedAnswer = null;
 
   const questionEl = document.getElementById('question');
   const optionsEl = document.getElementById('options');
   const scoreEl = document.getElementById('score');
   const restartBtn = document.getElementById('restart');
+  const nextBtn = document.getElementById('next');
 
   function loadQuestion() {
+    selectedAnswer = null; // Reset selected answer
     const currentQuestion = questions[currentQuestionIndex];
     questionEl.textContent = currentQuestion.question;
     optionsEl.innerHTML = '';
+    nextBtn.style.display = "block";
+    nextBtn.disabled = true;
 
     currentQuestion.options.forEach((option, index) => {
       const li = document.createElement('li');
-      li.innerHTML = `<button class="option-btn" onclick="selectOption(${index})">${option}</button>`;
+      const btn = document.createElement('button');
+      btn.textContent = option;
+      btn.classList.add('option-btn');
+      btn.onclick = () => selectOption(btn, index);
+      li.appendChild(btn);
       optionsEl.appendChild(li);
     });
   }
 
-  function selectOption(selectedIndex) {
+  function selectOption(btn, selectedIndex) {
+    if (selectedAnswer !== null) return; // Prevent re-selection
+
+    selectedAnswer = selectedIndex;
     const currentQuestion = questions[currentQuestionIndex];
+
     if (selectedIndex === currentQuestion.answer) {
+      btn.classList.add("correct");
       score++;
-      alert('Correct!');
     } else {
-      alert('Wrong!');
+      btn.classList.add("wrong");
     }
+
+    // Disable all other buttons after selection
+    document.querySelectorAll('.option-btn').forEach(button => button.disabled = true);
+
+    // Enable the next button
+    nextBtn.disabled = false;
+  }
+
+  function nextQuestion() {
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
       loadQuestion();
@@ -68,7 +90,6 @@ const questions = [
   }
 
   function startQuiz() {
-    // Hide the start button and show the quiz section
     document.getElementById('start').style.display = 'none';
     document.getElementById('quiz').style.display = 'block';
     loadQuestion();
