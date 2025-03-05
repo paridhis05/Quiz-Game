@@ -19,14 +19,40 @@ const questions = [
   let currentQuestionIndex = 0;
   let score = 0;
   let selectedAnswer = null;
+  let timerInterval;
+  let timeLeft = 10; // Time per question
 
   const questionEl = document.getElementById('question');
+  const timerEl = document.getElementById('timer');
   const optionsEl = document.getElementById('options');
   const scoreEl = document.getElementById('score');
   const restartBtn = document.getElementById('restart');
   const nextBtn = document.getElementById('next');
 
+  function startTimer() {
+    timeLeft = 10;
+    timerEl.textContent = `Time Left: ${timeLeft}s`;
+
+    timerInterval = setInterval(() => {
+      timeLeft--;
+      timerEl.textContent = `Time Left: ${timeLeft}s`;
+
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        handleTimeout();
+      }
+    }, 1000);
+  }
+
+  function handleTimeout() {
+    document.querySelectorAll('.option-btn').forEach(button => button.disabled = true);
+    nextBtn.disabled = false;
+    timerEl.textContent = "Time's up!";
+  }
+
   function loadQuestion() {
+    clearInterval(timerInterval); // Clear previous timer
+    startTimer(); // Start new timer
     selectedAnswer = null; // Reset selected answer
     const currentQuestion = questions[currentQuestionIndex];
     questionEl.textContent = currentQuestion.question;
@@ -48,6 +74,8 @@ const questions = [
   function selectOption(btn, selectedIndex) {
     if (selectedAnswer !== null) return; // Prevent re-selection
 
+    clearInterval(timerInterval); // Stop the timer
+    
     selectedAnswer = selectedIndex;
     const currentQuestion = questions[currentQuestionIndex];
 
