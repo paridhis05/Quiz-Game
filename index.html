@@ -10,21 +10,24 @@
 </head>
 <body>
 
-    <div class="quiz-container">
-        <h1>Quiz Game</h1>
-        <!-- --------------- Start Button --------------- -->
-        <button class="start-btn" id="start" onclick="startQuiz()">Start Quiz</button>
-    
-        <!-- --------------- Quiz Section --------------- -->
-        <div id="quiz" style="display: none;">
-          <div class="timer" id="timer">Time Left: 10s</div>
-          <div class="question" id="question"></div>
-          <ul class="options" id="options"></ul>
-          <button class="next-btn" id="next" onclick="nextQuestion()" disabled>Next</button>
-        </div>
-        <div class="score" id="score"></div>
-        <button class="restart-btn" id="restart" onclick="restartQuiz()">Restart</button>
+  <div class="quiz-container">
+    <h1>Quiz Game</h1>
+    <p class="progress" id="progress"></p>
+
+    <!-- Start Button -->
+    <button class="start-btn" id="start" onclick="startQuiz()">Start Quiz</button>
+
+    <!-- Quiz Section -->
+    <div id="quiz" style="display: none;">
+      <div class="timer" id="timer">Time Left: 10s</div>
+      <div class="question" id="question"></div>
+      <ul class="options" id="options"></ul>
+      <button class="next-btn" id="next" onclick="nextQuestion()" disabled>Next</button>
     </div>
+
+    <div class="score" id="score"></div>
+    <button class="restart-btn" id="restart" onclick="restartQuiz()">Restart</button>
+  </div>
 
       <script src="script.js"></script>
     
