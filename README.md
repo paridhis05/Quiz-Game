@@ -35,11 +35,11 @@ To run this project on your local machine:
 
 1. Clone the repository:
 
->> git clone https://github.com/paridhis05/Quiz-Game.git
+git clone https://github.com/paridhis05/Quiz-Game.git
 
 2. Navigate to the project folder:
 
->> cd Quiz-Game
+cd Quiz-Game
 
 3. Open the **index.html** file in a web browser.
 
