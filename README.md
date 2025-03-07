@@ -61,6 +61,17 @@ cd Quiz-Game
 
 ## Screenshots
 
+![Quiz Game!](./assets/images/image1.png "Quiz Game")
+
+![Quiz Game!](./assets/images/image2.png "Start")
+
+![Quiz Game!](./assets/images/image3.png "Wrong Answer")
+
+![Quiz Game!](./assets/images/image4.png "Right Answer")
+
+![Quiz Game!](./assets/images/image5.png "Score Display")
+
+
 ## Contributing
 
 Want to enhance this project? Follow these steps:
