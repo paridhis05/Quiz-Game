@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #bbd4a3, #183532);
+  background: linear-gradient(135deg, #e7ceed, #a0f1ea);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,13 +25,13 @@ body {
 
 h1 {
   font-size: 35px;
-  color: #396153;
+  color: #0d8f84;
   margin-bottom: 15px;
 }
 
 .progress {
   font-size: 14px;
-  color: #2b4f37;
+  color: #004d5a;
   padding: 12px;
   border-radius: 12px;
   position: absolute;
@@ -70,7 +70,7 @@ h1 {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background: #688a65;
+  background: #d68aea;
   color: white;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
@@ -78,27 +78,17 @@ h1 {
 
 .option-btn{
   background: #eee;
-  color: #364e31;
+  color: #004d5a;
 }
 
 .option-btn:hover{
-  background: #5f929d;
+  background: #8ecec7;
   color: white;
 }
 
 .start-btn:hover, .restart-btn:hover {
-  background-color: #364e31;
+  background-color: #862f9b;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  color: white;
-}
-
-.option-btn.correct {
-  background-color: #28a745 !important;
-  color: white;
-}
-
-.option-btn.wrong {
-  background-color: #dc3545 !important;
   color: white;
 }
 
@@ -110,13 +100,13 @@ h1 {
 }
 
 .next-btn {
-  background-color: #253721;
+  background-color: #004d5a;
   color: white;
   display: none;
 }
 
 .restart-btn {
-  background-color: #253721;
+  background-color: #d68aea;
   color: white;
   display: none;
   margin-top: 15px;
