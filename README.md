@@ -2,7 +2,7 @@
 
 ## Description
 
-A simple and interactive **Quiz Game** built with **HTML, CSS, and JavaScript**. This game presents multiple-choice questions with a **timer**, tracks progress, and provides instant feedback on the selected answer. The user can restart the game and play again!
+An interactive **Quiz Game** built using **HTML, CSS, and JavaScript**. The game presents multiple-choice questions with a **timer**, provides immediate feedback on selected answers, and keeps track of the score. Users can restart the quiz and try again!
 
 
 ## Features
@@ -19,14 +19,16 @@ A simple and interactive **Quiz Game** built with **HTML, CSS, and JavaScript**.
 
 - **Restart option** to replay the game
 
+- **Smooth animations and transitions** for an engaging experience
+
 
 ## Technologies Used
 
 - **HTML** – Structure of the game
 
-- **CSS** – Styling and animations
+- **CSS** – Styling, animations, and responsive layout
 
-- **JavaScript** – Functionality and game logic
+- **JavaScript** – Game logic and interactivity
 
 
 ## Installation
