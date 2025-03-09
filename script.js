@@ -113,6 +113,7 @@ function nextQuestion() {
 function showScore() {
   document.getElementById('quiz').style.display = 'none'; // Quiz disappears
   scoreEl.textContent = `You scored ${score} out of ${questions.length}!`; // Final score is displayed
+  scoreEl.classList.add('show'); // Add animation class
   restartBtn.style.display = 'block'; // Restart button appears
 }
 
